@@ -3,7 +3,16 @@ import React from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-const ProductSlider = ({ images }) => {
+interface Image {
+  original: string;
+  thumbnail: string;
+}
+
+interface ProductSliderProps {
+  images: Image[];
+}
+
+const ProductSlider: React.FC<ProductSliderProps> = ({ images }) => {
   return (
     <div className="col-lg-6 mb-4">
       <ImageGallery
